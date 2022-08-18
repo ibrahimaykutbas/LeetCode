@@ -13,20 +13,16 @@ Output: [1,2,3]
 
 const arr = [1, 2, 3];
 
-// Tekil olan sayıları ekleyeceğimiz array
 let newArr = [];
 
 const removeDuplicatesFromSortedList = (arr) => {
-    // Elimizdeki array'in her bir elemanına ulaşmak için map ile dolaşıyoruz
-    arr.map((i) => {
-        // Dolaştığımız her bir değerin newArr'in içerisinde olup olmadığına bakıyoruz
-        // Eğer sonuç -1 ise newArr'in içerisinde yoktur ve newArr'in içerisine ekliyoruz
-        if (newArr.indexOf(i) == -1) {
-            newArr.push(i);
-        }
-    });
+  arr.map((i) => {
+    if (newArr.indexOf(i) == -1) {
+      newArr.push(i);
+    }
+  });
 
-    console.log(newArr.sort());
+  console.log(newArr.sort());
 };
 
 removeDuplicatesFromSortedList(arr);
