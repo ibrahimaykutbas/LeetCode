@@ -25,23 +25,17 @@ const nums = [0, 1, 2, 2, 3, 0, 4, 2];
 const value = 2;
 
 const removeElement = (nums, value) => {
-    // Girilen value değerinin array içerisinde olup olmadığını kontrol ediyoruz
-    const check = nums.some((num) => num == value);
+  const check = nums.some((num) => num == value);
 
-    if (check) {
-        // Eğer value değeri array içerisinde varsa array'i dolaşıyoruz
-        nums.map((num, index) => {
-            // Dolaştığımız her bir değerin value ile eşit olup olmadığını kontrol ediyoruz
-            // Eğer eşitlik sağlanıyorsa, array içerisindeki o index'in değerini değiştiriyoruz
-            num == value && (nums[index] = "_");
-        });
-    } else {
-        // Eğer value değeri array içerisinde yoksa kullanıcıya hata mesajı veriyoruz
-        console.log("Girilen value, array içerisinde bulunmuyor!");
-    }
+  if (check) {
+    nums.map((num, index) => {
+      num == value && (nums[index] = "_");
+    });
+  } else {
+    console.log("Girilen value, array içerisinde bulunmuyor!");
+  }
 
-    // Değiştirdiğimiz değeri listenin sonunda göstermek için sort() fonksiyonu ile küçükten büyüğe doğru sıralıyoruz
-    console.log(nums.sort());
+  console.log(nums.sort());
 };
 
 removeElement(nums, value);
