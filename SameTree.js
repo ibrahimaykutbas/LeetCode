@@ -18,33 +18,20 @@ Output: false
 const p = [1, 2, 3];
 const q = [1, 2, 3];
 
-// Arraylerin aynı olup olmadığını bu değişkende tutacağız
 let isSameTree = false;
 
 const checkSameTree = (p, q) => {
-    // İlk olarak p ve q'nin uzunluklarını karşılaştırıyoruz
-    // Eğer uzunluklar aynı değilse döngüye hiç sokmuyoruz
+  if (p.length == q.length) {
+    p.map((num, index) => {
+      if (num == q[index]) {
+        isSameTree = true;
+      } else {
+        return (isSameTree = false);
+      }
+    });
+  }
 
-    if (p.length == q.length) {
-        // p array'inin içerisinde dolaşıyoruz
-        // Hangisi ile başladığımızın bir önemi yok
-        p.map((num, index) => {
-            /* 
-             Eğer p arrayinde tek tek üzerinde durduğumuz değer ile 
-             q arrayindeki, aynı indexteki değere eşitse
-             isSameTree değişkenini true olarak değiştiriyoruz
-            */
-            if (num == q[index]) {
-                isSameTree = true;
-            } else {
-                // Eğer değerler aynı değilse döngüden çıkıyoruz
-                // Ve isSameTree değişkenini false olarak değiştiriyoruz
-                return (isSameTree = false);
-            }
-        });
-    }
-
-    console.log(isSameTree ? "Same Tree" : "Not Same Tree");
+  console.log(isSameTree ? "Same Tree" : "Not Same Tree");
 };
 
 checkSameTree(p, q);
