@@ -23,7 +23,6 @@ Explanation: The transformation of each word is:
 There are 2 different transformations: "--...-." and "--...--.".
 
 Example 2:
-
 Input: words = ["a"]
 Output: 1
 */
