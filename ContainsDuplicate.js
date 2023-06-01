@@ -20,11 +20,9 @@ let newNumbers = [];
 let isDuplicate = false;
 
 const isContainsDuplicate = (nums) => {
-  nums.map((num) => {
-    newNumbers.indexOf(num) == -1 ? newNumbers.push(num) : (isDuplicate = true);
-  });
+ let uniqeArray = [... new Set(nums)];
 
-  console.log(isDuplicate);
+  return nums.length == uniqeArray.length ? false : true
 };
 
-isContainsDuplicate(nums);
+console.log(isContainsDuplicate(nums));
